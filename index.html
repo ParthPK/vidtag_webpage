@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CityGuessr, a model for worldwide video geolocalization along with the CityGuessr68k dataset.">
+        content="VidTAG, a model for temporally aligned framewise worldwide video geolocalization via frame to GPS retrieval.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CityGuessr: City-Level Video Geo-Localization on a Global Scale</title>
+  <title>VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -47,21 +47,23 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CityGuessr: City-Level Video Geo-Localization on a Global Scale</h1>
-          <h2 class="subtitle conference">European Conference on Computer Vision(ECCV) 2024</h2>
+          <h1 class="title is-1 publication-title">VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale</h1>
+          <h2 class="subtitle conference">Conference on Computer Vision and Pattern Recognition (CVPR) 2026</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://parthpk.github.io/">Parth Parag Kulkarni</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://iitr.ac.in/Schools/Mehta%20Family%20School%20of%20Data%20Science%20and%20Artificial%20Intelligence/People/Faculty/101043.html">Gaurav Kumar Nayak</a><sup>2</sup>,</span>
+              <a href="https://www.rohitg.xyz/">Rohit Gupta</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://prakashchhipa.github.io/">Prakash Chandra Chhipa</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://www.crcv.ucf.edu/person/mubarak-shah/">Mubarak Shah</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Center for Research in Computer Vision, University of Central Florida, USA,</span>
-            <span class="author-block"><sup>2</sup>Mehta Family School of DS & AI, Indian Institute of Technology Roorkee, India</span>
+            <span class="author-block"><sup>1</sup>Institute of Artificial Intelligence, University of Central Florida, USA,</span>
+            <span class="author-block"><sup>2</sup>Lule˚a Tekniska Universitet, Sweden</span>
           </div>
 
           <div class="column has-text-centered">
@@ -123,70 +125,7 @@
   </div>
 </section>
   
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Abu_Dhabi.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">Abu Dhabi, UAE</div>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Wellington.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">Wellington, New Zealand</div>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Cairo.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">Cairo, Egypt</div>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Stockholm.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">Stockholm, Sweden</div>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/New_Orleans.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">New Orleans, USA</div>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Lima.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">Lima, Peru</div>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Busan.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">Busan, South Korea</div>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Johannesburg.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="caption">Johannesburg, South Africa</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -196,25 +135,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Video geolocalization is a crucial problem in current times.  Given just a video, ascertaining where it was captured  
-            from can have a plethora of advantages. The problem of worldwide geolocalization has been tackled before, but only 
-            using the image modality. Its video counterpart remains relatively unexplored. Meanwhile, video geolocalization has 
-            also garnered some attention in the recent past, but the existing methods are all restricted to specific regions. 
-            This motivates us to explore the problem of video geolocalization at a global scale. Hence, we propose a novel problem 
-            of worldwide video geolocalization with the objective of hierarchically predicting the correct city, state/province, 
-            country, and continent, given a video. However, no large scale video datasets that have extensive worldwide coverage 
-            exist, to train models for solving this problem. To this end, we introduce a new dataset, "<i>CityGuessr68k</i>" 
-            comprising of 68,269 videos from 166 cities all over the world. We also propose a novel baseline approach to this 
-            problem, by designing a transformer-based architecture comprising of an elegant "<i>Self-Cross Attention</i>" module 
-            for incorporating scenes as well as a "<i>TextLabel Alignment</i>" strategy for distilling knowledge from textlabels 
-            in feature space. To further enhance our location prediction, we also utilize soft-scene labels. Finally we demonstrate 
-            the performance of our method on our new dataset as well as Mapillary(MSLS).
+            This webpage is work under progress.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
+    <!--
     <!-- Dataset. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -290,6 +217,7 @@
       </div>
     </div>
     <!--/ Dataset. -->
+    -->
   </div>
 </section>
 <!--
