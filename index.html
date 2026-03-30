@@ -70,7 +70,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08031.pdf"
+                <a href="https://drive.google.com/file/d/1CGCXnqFozHcb96Rpl6_UC-mGEAzLEGIg/view?usp=sharing"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -79,7 +79,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2411.06344"
+                <a href="https://parthpk.github.io/vidtag_webpage/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -89,7 +89,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://parthpk.github.io/cityguessr-webpage/"
+                <a href="https://parthpk.github.io/vidtag_webpage/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -99,7 +99,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ParthPK/CityGuessr"
+                <a href="https://parthpk.github.io/vidtag_webpage/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -109,12 +109,12 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://www.crcv.ucf.edu/data1/CityGuessr68k/"
+                <a href="https://drive.google.com/file/d/1m1Nr7PYf8yuX1xlSfp7kejh6eNw7dsXO/view?usp=sharing"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Supplementary</span>
                   </a>
             </div>
 
@@ -135,7 +135,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This webpage is work under progress.
+            The task of video geolocalization aims to determine the precise GPS coordinates of a video’s origin and map its trajectory; with 
+            applications in forensics, social media, and exploration. Existing classification-based approaches operate at a coarse city-level 
+            granularity and fail to capture fine-grained details, while image retrieval methods are impractical on a global scale due to the 
+            need for extensive image galleries which are infeasible to compile. Comparatively, constructing a gallery of GPS coordinates is 
+            straightforward and inexpensive. We propose VidTAG, a dual-encoder framework that performs frame-to-GPS retrieval using both 
+            self-supervised and language-aligned features. To address temporal inconsistencies in video predictions, we introduce the TempGeo 
+            module, which aligns frame embeddings, and the GeoRefiner module, an encoder-decoder architecture that refines GPS features using 
+            the aligned frame embeddings. Evaluations on Mapillary (MSLS) and GAMa datasets demonstrate our model’s ability to generate 
+            temporally consistent trajectories and outperform baselines, achieving a 20\% improvement at the 1 km threshold over GeoCLIP. We 
+            also beat current State-of-the-Art by 25\% on global coarse grained video geolocalization (CityGuessr68k). Our approach enables 
+            fine-grained video geolocalization and lays a strong foundation for future research.
           </p>
         </div>
       </div>
